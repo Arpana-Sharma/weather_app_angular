@@ -1,0 +1,21 @@
+<div class="container" [ngClass]="{cloudy: wthrBg=='cloudy', thunderstrom: wthrBg=='thunderstrom', 
+    drizzle: wthrBg=='drizzle', rain: wthrBg=='rain', snow: wthrBg=='snow', fog: wthrBg=='fog',
+    sun: wthrBg=='sun'}">
+    <div class="form-box">
+        <app-search-bar (citySearch)="citySearch($event)"></app-search-bar>
+        <div>
+            <img src="{{wthr_report.icon}}" alt="">
+            <h2>{{wthr_report.city}} - {{wthr_report.country}}</h2>
+        </div>
+        <h1>{{wthr_report.temp}} &deg; C</h1>
+        <p>{{wthr_report.description}}</p>
+        <p>{{wthr_report.date}}</p>
+        <p>Sunrise: {{wthr_report.sunrise}} &nbsp; &nbsp; Sunset: {{wthr_report.sunset}}</p>
+        <p>AQI: {{wthr_report.aqi}}  &nbsp; &nbsp; Feels Like: {{wthr_report.app_temp}} &deg; C</p>
+        <p>Precipitation: {{wthr_report.precip}} mm/hr &nbsp; &nbsp; 
+            Pressure: {{wthr_report.pressure}} mb</p>
+        <p>Snow: {{wthr_report.snow}} mm/hr &nbsp; &nbsp;
+        Relative Humidity: {{wthr_report.rel_humidity}} %</p>
+        <p>Visibility: {{wthr_report.visibility}} km &nbsp; &nbsp;Wind: {{wthr_report.wind_speed}} m/s - {{wthr_report.wind_dir}} &deg;</p>
+    </div>
+</div>
